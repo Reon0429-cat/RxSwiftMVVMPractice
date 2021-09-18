@@ -19,9 +19,6 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C0x-o7-elI">
                                 <rect key="frame" x="363" y="64" width="31" height="30"/>
                                 <state key="normal" title="保存"/>
-                                <connections>
-                                    <action selector="saveButtonDidTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y5m-Xg-zCs"/>
-                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oai-VT-dSx">
                                 <rect key="frame" x="0.0" y="104" width="414" height="758"/>

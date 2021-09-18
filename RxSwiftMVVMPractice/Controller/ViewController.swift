@@ -6,47 +6,46 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 final class ViewController: UIViewController {
     
     @IBOutlet private weak var saveButton: UIButton!
     @IBOutlet private weak var tableView: UITableView!
     
-    private var userUseCase = UserUseCase()
-    private var inputtedName = ""
     private enum RowType: CaseIterable {
         case inputName
     }
+    private let viewModel: ViewModelType = ViewModel()
+    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupBindings()
         setupTableView()
-        print(userUseCase.loadUser())
         
     }
     
-    @IBAction private func saveButtonDidTapped(_ sender: Any) {
-        let user = User(name: inputtedName)
-        userUseCase.saveUser(user: user)
-    }
-    
-}
-
-// MARK: - func
-private extension ViewController {
-    
-    func presentAlertWithTextField() {
-        let alert = UIAlertController(title: "名前入力",
-                                      message: nil,
-                                      preferredStyle: .alert)
-        alert.addTextField { textField in
-            textField.delegate = self
-        }
-        alert.addAction(UIAlertAction(title: "閉じる", style: .default, handler: { _ in
-            self.tableView.reloadData()
-        }))
-        present(alert, animated: true)
+    private func setupBindings() {
+        // Input
+        saveButton.rx.tap
+            .subscribe(onNext: viewModel.inputs.saveButtonDidTapped)
+            .disposed(by: disposeBag)
+        
+        // Output
+        viewModel.outputs.event
+            .drive(onNext: { [weak self] event in
+                guard let self = self else { return }
+                switch event {
+                    case .presentAlert(let alert):
+                        self.present(alert, animated: true)
+                    case .notifyClosedAlert:
+                        self.tableView.reloadData()
+                }
+            })
+            .disposed(by: disposeBag)
     }
     
 }
@@ -64,7 +63,7 @@ extension ViewController: UITableViewDelegate,
                    didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if RowType.allCases[indexPath.row] == .inputName {
-            presentAlertWithTextField()
+            viewModel.inputs.didSelectRow(vc: self)
         }
     }
     
@@ -78,7 +77,8 @@ extension ViewController: UITableViewDelegate,
         let cell = tableView.dequeueReusableCell(
             withIdentifier: CustomTableViewCell.identifier
         ) as! CustomTableViewCell
-        cell.configure(name: inputtedName)
+        let name = viewModel.outputs.userName
+        cell.configure(name: name)
         return cell
     }
     
@@ -88,7 +88,7 @@ extension ViewController: UITableViewDelegate,
 extension ViewController: UITextFieldDelegate {
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
-        inputtedName = textField.text ?? ""
+        viewModel.inputs.textFieldDidChangeSelection(text: textField.text)
     }
     
 }
