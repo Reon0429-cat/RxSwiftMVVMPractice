@@ -29,8 +29,8 @@ final class CounterViewController: UIViewController {
     private func setupBindings() {
         // Input
         let input = CounterViewModelInput(countUpButton: countUpButton.rx.tap.asObservable(),
-                                   countDownButton: countDownButton.rx.tap.asObservable(),
-                                   countResetButton: resetButton.rx.tap.asObservable())
+                                          countDownButton: countDownButton.rx.tap.asObservable(),
+                                          countResetButton: resetButton.rx.tap.asObservable())
         viewModel.setup(input: input)
         
         // Output

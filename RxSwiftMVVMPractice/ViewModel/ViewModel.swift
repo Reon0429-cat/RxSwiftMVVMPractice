@@ -23,36 +23,14 @@ protocol CounterViewModelType {
     var outputs: CounterViewModelOutput? { get }
 }
 
-final class CounterViewModel: CounterViewModelType {
+final class CounterViewModel {
     
-    var outputs: CounterViewModelOutput?
     private let countRelay = BehaviorRelay<Int>(value: 0)
     private let initialCount = 0
     private let disposeBag = DisposeBag()
     
     init() {
-        self.outputs = self
         resetCount()
-    }
-    
-    func setup(input: CounterViewModelInput) {
-        input.countUpButton
-            .subscribe(onNext: { [weak self] in
-                self?.incrementCount()
-            })
-            .disposed(by: disposeBag)
-        
-        input.countDownButton
-            .subscribe(onNext: { [weak self] in
-                self?.decrementCount()
-            })
-            .disposed(by: disposeBag)
-
-        input.countResetButton
-            .subscribe(onNext: { [weak self] in
-                self?.resetCount()
-            })
-            .disposed(by: disposeBag)
     }
     
     private func incrementCount() {
@@ -75,8 +53,30 @@ extension CounterViewModel: CounterViewModelOutput {
     
     var counterText: Driver<String?> {
         return countRelay
-            .map { "\($0)" }
+            .map { "🍎 \($0) 🍏" }
             .asDriver(onErrorJustReturn: nil)
+    }
+    
+}
+
+extension CounterViewModel: CounterViewModelType {
+    
+    func setup(input: CounterViewModelInput) {
+        input.countUpButton
+            .subscribe(onNext: incrementCount)
+            .disposed(by: disposeBag)
+        
+        input.countDownButton
+            .subscribe(onNext: decrementCount)
+            .disposed(by: disposeBag)
+
+        input.countResetButton
+            .subscribe(onNext: resetCount)
+            .disposed(by: disposeBag)
+    }
+    
+    var outputs: CounterViewModelOutput? {
+        return self
     }
     
 }
