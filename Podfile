@@ -9,6 +9,8 @@ target 'RxSwiftMVVMPractice' do
 
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'RxOptional'
+  pod 'RxDataSources'
 
   target 'RxSwiftMVVMPracticeTests' do
     inherit! :search_paths

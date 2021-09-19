@@ -17,7 +17,9 @@
 		AB00DE3726F66F26008CC3F1 /* RxSwiftMVVMPracticeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB00DE3626F66F26008CC3F1 /* RxSwiftMVVMPracticeTests.swift */; };
 		AB00DE4226F66F26008CC3F1 /* RxSwiftMVVMPracticeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB00DE4126F66F26008CC3F1 /* RxSwiftMVVMPracticeUITests.swift */; };
 		ABBA34B626F76F3F001BAEEF /* CounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBA34B526F76F3F001BAEEF /* CounterViewController.swift */; };
-		ABBA34B826F76FD1001BAEEF /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBA34B726F76FD1001BAEEF /* ViewModel.swift */; };
+		ABBA34B826F76FD1001BAEEF /* CounterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBA34B726F76FD1001BAEEF /* CounterViewModel.swift */; };
+		ABBA34BA26F7785C001BAEEF /* WKWeb.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABBA34B926F7785C001BAEEF /* WKWeb.storyboard */; };
+		ABBA34BC26F7786B001BAEEF /* WKWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBA34BB26F7786B001BAEEF /* WKWebViewController.swift */; };
 		BD21BDDF883FB4C2481E31C5 /* Pods_RxSwiftMVVMPracticeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1F08F566280BDFA1C8EA87D /* Pods_RxSwiftMVVMPracticeTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,7 +62,9 @@
 		AB00DE4126F66F26008CC3F1 /* RxSwiftMVVMPracticeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftMVVMPracticeUITests.swift; sourceTree = "<group>"; };
 		AB00DE4326F66F26008CC3F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABBA34B526F76F3F001BAEEF /* CounterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewController.swift; sourceTree = "<group>"; };
-		ABBA34B726F76FD1001BAEEF /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		ABBA34B726F76FD1001BAEEF /* CounterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewModel.swift; sourceTree = "<group>"; };
+		ABBA34B926F7785C001BAEEF /* WKWeb.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WKWeb.storyboard; sourceTree = "<group>"; };
+		ABBA34BB26F7786B001BAEEF /* WKWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewController.swift; sourceTree = "<group>"; };
 		CC1D410FD648872E9BD9B69D /* Pods-RxSwiftMVVMPracticeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftMVVMPracticeTests.debug.xcconfig"; path = "Target Support Files/Pods-RxSwiftMVVMPracticeTests/Pods-RxSwiftMVVMPracticeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F49C7EB18184B6B5FA5E3220 /* Pods_RxSwiftMVVMPractice_RxSwiftMVVMPracticeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftMVVMPractice_RxSwiftMVVMPracticeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -172,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				ABBA34B526F76F3F001BAEEF /* CounterViewController.swift */,
+				ABBA34BB26F7786B001BAEEF /* WKWebViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -179,7 +184,7 @@
 		AB00DE5726F67223008CC3F1 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				ABBA34B726F76FD1001BAEEF /* ViewModel.swift */,
+				ABBA34B726F76FD1001BAEEF /* CounterViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -202,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				AB00DE2526F66F25008CC3F1 /* Counter.storyboard */,
+				ABBA34B926F7785C001BAEEF /* WKWeb.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -330,6 +336,7 @@
 				AB00DE2C26F66F26008CC3F1 /* LaunchScreen.storyboard in Resources */,
 				AB00DE2926F66F26008CC3F1 /* Assets.xcassets in Resources */,
 				AB00DE2726F66F25008CC3F1 /* Counter.storyboard in Resources */,
+				ABBA34BA26F7785C001BAEEF /* WKWeb.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,9 +464,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABBA34BC26F7786B001BAEEF /* WKWebViewController.swift in Sources */,
 				ABBA34B626F76F3F001BAEEF /* CounterViewController.swift in Sources */,
 				AB00DE2026F66F25008CC3F1 /* AppDelegate.swift in Sources */,
-				ABBA34B826F76FD1001BAEEF /* ViewModel.swift in Sources */,
+				ABBA34B826F76FD1001BAEEF /* CounterViewModel.swift in Sources */,
 				AB00DE2226F66F25008CC3F1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
