@@ -64,16 +64,19 @@ final class SettingsViewController: UIViewController {
             _ in
             let item = dataSource[indexPath]
             switch item {
-                case .account, .security, .notification, .contents,
-                     .sounds, .dataUsing, .accessibility:
-                    let cell = tableView
-                        .dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+                case .account,
+                     .security,
+                     .notification,
+                     .contents,
+                     .sounds,
+                     .dataUsing,
+                     .accessibility:
+                    let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
                     cell.textLabel?.text = item.title
                     cell.accessoryType = item.accessoryType
                     return cell
                 case .description(let text):
-                    let cell = tableView
-                        .dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+                    let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
                     cell.textLabel?.text = text
                     cell.isUserInteractionEnabled = false
                     return cell
@@ -91,6 +94,7 @@ extension SettingsViewController: UITableViewDelegate {
         let item = dataSource[indexPath]
         return item.rowHeight
     }
+    
     func tableView(_ tableView: UITableView,
                    heightForHeaderInSection section: Int) -> CGFloat {
         let section = dataSource[section]
