@@ -15,31 +15,9 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C0x-o7-elI">
-                                <rect key="frame" x="363" y="64" width="31" height="30"/>
-                                <state key="normal" title="保存"/>
-                            </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oai-VT-dSx">
-                                <rect key="frame" x="0.0" y="104" width="414" height="758"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="oai-VT-dSx" secondAttribute="bottom" id="2N3-Rb-phg"/>
-                            <constraint firstItem="C0x-o7-elI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="LEY-6J-03l"/>
-                            <constraint firstItem="oai-VT-dSx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TEY-xE-wgp"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="C0x-o7-elI" secondAttribute="trailing" constant="20" id="WCe-7i-Jv3"/>
-                            <constraint firstItem="oai-VT-dSx" firstAttribute="top" secondItem="C0x-o7-elI" secondAttribute="bottom" constant="10" id="usx-I3-an5"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oai-VT-dSx" secondAttribute="trailing" id="xjt-E6-hJM"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="saveButton" destination="C0x-o7-elI" id="sDd-vX-1md"/>
-                        <outlet property="tableView" destination="oai-VT-dSx" id="9pX-DK-q9e"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
