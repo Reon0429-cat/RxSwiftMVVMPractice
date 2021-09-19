@@ -24,6 +24,12 @@
 		ABBA34C026F77D56001BAEEF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBA34BF26F77D56001BAEEF /* SettingsViewController.swift */; };
 		ABBA34C226F77DD6001BAEEF /* SettingsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBA34C126F77DD6001BAEEF /* SettingsSection.swift */; };
 		ABBA34C426F78110001BAEEF /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBA34C326F78110001BAEEF /* SettingsViewModel.swift */; };
+		ABBA34CE26F7B560001BAEEF /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABBA34CD26F7B560001BAEEF /* Login.storyboard */; };
+		ABBA34D026F7B56A001BAEEF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBA34CF26F7B56A001BAEEF /* LoginViewController.swift */; };
+		ABBA34D226F7B5AF001BAEEF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBA34D126F7B5AF001BAEEF /* User.swift */; };
+		ABBA34D426F7B783001BAEEF /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBA34D326F7B783001BAEEF /* LoginViewModel.swift */; };
+		ABBA34D626F7B7F8001BAEEF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBA34D526F7B7F8001BAEEF /* HomeViewController.swift */; };
+		ABBA34D826F7B9B6001BAEEF /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBA34D726F7B9B6001BAEEF /* Validation.swift */; };
 		BD21BDDF883FB4C2481E31C5 /* Pods_RxSwiftMVVMPracticeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1F08F566280BDFA1C8EA87D /* Pods_RxSwiftMVVMPracticeTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +79,12 @@
 		ABBA34BF26F77D56001BAEEF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		ABBA34C126F77DD6001BAEEF /* SettingsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSection.swift; sourceTree = "<group>"; };
 		ABBA34C326F78110001BAEEF /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		ABBA34CD26F7B560001BAEEF /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		ABBA34CF26F7B56A001BAEEF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		ABBA34D126F7B5AF001BAEEF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		ABBA34D326F7B783001BAEEF /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		ABBA34D526F7B7F8001BAEEF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		ABBA34D726F7B9B6001BAEEF /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		CC1D410FD648872E9BD9B69D /* Pods-RxSwiftMVVMPracticeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftMVVMPracticeTests.debug.xcconfig"; path = "Target Support Files/Pods-RxSwiftMVVMPracticeTests/Pods-RxSwiftMVVMPracticeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F49C7EB18184B6B5FA5E3220 /* Pods_RxSwiftMVVMPractice_RxSwiftMVVMPracticeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftMVVMPractice_RxSwiftMVVMPracticeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -140,9 +152,10 @@
 		AB00DE1E26F66F25008CC3F1 /* RxSwiftMVVMPractice */ = {
 			isa = PBXGroup;
 			children = (
-				AB00DE5826F67228008CC3F1 /* Model */,
-				AB00DE5526F6721A008CC3F1 /* View */,
-				AB00DE5726F67223008CC3F1 /* ViewModel */,
+				ABBA34CC26F7B429001BAEEF /* Login */,
+				ABBA34CB26F7B3FC001BAEEF /* WKWeb */,
+				ABBA34C626F7B3B9001BAEEF /* Counter */,
+				ABBA34C526F7B39C001BAEEF /* Settings */,
 				AB00DE1F26F66F25008CC3F1 /* AppDelegate.swift */,
 				AB00DE2126F66F25008CC3F1 /* SceneDelegate.swift */,
 				AB00DE2826F66F26008CC3F1 /* Assets.xcassets */,
@@ -170,58 +183,47 @@
 			path = RxSwiftMVVMPracticeUITests;
 			sourceTree = "<group>";
 		};
-		AB00DE5526F6721A008CC3F1 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				AB00DE5626F6721F008CC3F1 /* Controller */,
-				AB00DE5D26F67324008CC3F1 /* Storyboard */,
-				AB00DE5C26F6731D008CC3F1 /* Cell */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		AB00DE5626F6721F008CC3F1 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				ABBA34B526F76F3F001BAEEF /* CounterViewController.swift */,
-				ABBA34BB26F7786B001BAEEF /* WKWebViewController.swift */,
-				ABBA34BF26F77D56001BAEEF /* SettingsViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		AB00DE5726F67223008CC3F1 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				ABBA34B726F76FD1001BAEEF /* CounterViewModel.swift */,
-				ABBA34C326F78110001BAEEF /* SettingsViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		AB00DE5826F67228008CC3F1 /* Model */ = {
+		ABBA34C526F7B39C001BAEEF /* Settings */ = {
 			isa = PBXGroup;
 			children = (
 				ABBA34C126F77DD6001BAEEF /* SettingsSection.swift */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-		AB00DE5C26F6731D008CC3F1 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
-		AB00DE5D26F67324008CC3F1 /* Storyboard */ = {
-			isa = PBXGroup;
-			children = (
-				AB00DE2526F66F25008CC3F1 /* Counter.storyboard */,
-				ABBA34B926F7785C001BAEEF /* WKWeb.storyboard */,
+				ABBA34BF26F77D56001BAEEF /* SettingsViewController.swift */,
+				ABBA34C326F78110001BAEEF /* SettingsViewModel.swift */,
 				ABBA34BD26F77D4A001BAEEF /* Settings.storyboard */,
 			);
-			path = Storyboard;
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		ABBA34C626F7B3B9001BAEEF /* Counter */ = {
+			isa = PBXGroup;
+			children = (
+				ABBA34B526F76F3F001BAEEF /* CounterViewController.swift */,
+				ABBA34B726F76FD1001BAEEF /* CounterViewModel.swift */,
+				AB00DE2526F66F25008CC3F1 /* Counter.storyboard */,
+			);
+			path = Counter;
+			sourceTree = "<group>";
+		};
+		ABBA34CB26F7B3FC001BAEEF /* WKWeb */ = {
+			isa = PBXGroup;
+			children = (
+				ABBA34B926F7785C001BAEEF /* WKWeb.storyboard */,
+				ABBA34BB26F7786B001BAEEF /* WKWebViewController.swift */,
+			);
+			path = WKWeb;
+			sourceTree = "<group>";
+		};
+		ABBA34CC26F7B429001BAEEF /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				ABBA34D126F7B5AF001BAEEF /* User.swift */,
+				ABBA34D726F7B9B6001BAEEF /* Validation.swift */,
+				ABBA34CD26F7B560001BAEEF /* Login.storyboard */,
+				ABBA34D326F7B783001BAEEF /* LoginViewModel.swift */,
+				ABBA34CF26F7B56A001BAEEF /* LoginViewController.swift */,
+				ABBA34D526F7B7F8001BAEEF /* HomeViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		C72C620A86B9DD7EB517DEBD /* Pods */ = {
@@ -347,6 +349,7 @@
 			files = (
 				ABBA34BE26F77D4A001BAEEF /* Settings.storyboard in Resources */,
 				AB00DE2C26F66F26008CC3F1 /* LaunchScreen.storyboard in Resources */,
+				ABBA34CE26F7B560001BAEEF /* Login.storyboard in Resources */,
 				AB00DE2926F66F26008CC3F1 /* Assets.xcassets in Resources */,
 				AB00DE2726F66F25008CC3F1 /* Counter.storyboard in Resources */,
 				ABBA34BA26F7785C001BAEEF /* WKWeb.storyboard in Resources */,
@@ -477,14 +480,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABBA34D026F7B56A001BAEEF /* LoginViewController.swift in Sources */,
 				ABBA34C226F77DD6001BAEEF /* SettingsSection.swift in Sources */,
+				ABBA34D426F7B783001BAEEF /* LoginViewModel.swift in Sources */,
 				ABBA34C026F77D56001BAEEF /* SettingsViewController.swift in Sources */,
+				ABBA34D826F7B9B6001BAEEF /* Validation.swift in Sources */,
 				ABBA34BC26F7786B001BAEEF /* WKWebViewController.swift in Sources */,
 				ABBA34B626F76F3F001BAEEF /* CounterViewController.swift in Sources */,
 				AB00DE2026F66F25008CC3F1 /* AppDelegate.swift in Sources */,
 				ABBA34B826F76FD1001BAEEF /* CounterViewModel.swift in Sources */,
 				AB00DE2226F66F25008CC3F1 /* SceneDelegate.swift in Sources */,
+				ABBA34D226F7B5AF001BAEEF /* User.swift in Sources */,
 				ABBA34C426F78110001BAEEF /* SettingsViewModel.swift in Sources */,
+				ABBA34D626F7B7F8001BAEEF /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
