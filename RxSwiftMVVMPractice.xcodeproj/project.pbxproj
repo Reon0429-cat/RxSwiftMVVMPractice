@@ -16,6 +16,13 @@
 		AB00DE2C26F66F26008CC3F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB00DE2A26F66F26008CC3F1 /* LaunchScreen.storyboard */; };
 		AB00DE3726F66F26008CC3F1 /* RxSwiftMVVMPracticeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB00DE3626F66F26008CC3F1 /* RxSwiftMVVMPracticeTests.swift */; };
 		AB00DE4226F66F26008CC3F1 /* RxSwiftMVVMPracticeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB00DE4126F66F26008CC3F1 /* RxSwiftMVVMPracticeUITests.swift */; };
+		AB71079E26FA607000F4F695 /* ChainedRequests.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB71079D26FA607000F4F695 /* ChainedRequests.storyboard */; };
+		AB7107A126FA60BE00F4F695 /* ChainedRequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7107A026FA60BE00F4F695 /* ChainedRequestsViewController.swift */; };
+		AB7107A426FA63C700F4F695 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7107A226FA63C700F4F695 /* CustomTableViewCell.swift */; };
+		AB7107A526FA63C700F4F695 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB7107A326FA63C700F4F695 /* CustomTableViewCell.xib */; };
+		AB7107A726FA679200F4F695 /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7107A626FA679200F4F695 /* Repo.swift */; };
+		AB7107A926FA67A900F4F695 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7107A826FA67A900F4F695 /* NetworkService.swift */; };
+		AB7107AB26FA67B800F4F695 /* GitHubRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7107AA26FA67B800F4F695 /* GitHubRepository.swift */; };
 		ABBA34B626F76F3F001BAEEF /* CounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBA34B526F76F3F001BAEEF /* CounterViewController.swift */; };
 		ABBA34B826F76FD1001BAEEF /* CounterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBA34B726F76FD1001BAEEF /* CounterViewModel.swift */; };
 		ABBA34BA26F7785C001BAEEF /* WKWeb.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABBA34B926F7785C001BAEEF /* WKWeb.storyboard */; };
@@ -79,6 +86,13 @@
 		AB00DE3D26F66F26008CC3F1 /* RxSwiftMVVMPracticeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxSwiftMVVMPracticeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB00DE4126F66F26008CC3F1 /* RxSwiftMVVMPracticeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftMVVMPracticeUITests.swift; sourceTree = "<group>"; };
 		AB00DE4326F66F26008CC3F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB71079D26FA607000F4F695 /* ChainedRequests.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChainedRequests.storyboard; sourceTree = "<group>"; };
+		AB7107A026FA60BE00F4F695 /* ChainedRequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainedRequestsViewController.swift; sourceTree = "<group>"; };
+		AB7107A226FA63C700F4F695 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		AB7107A326FA63C700F4F695 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
+		AB7107A626FA679200F4F695 /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
+		AB7107A826FA67A900F4F695 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		AB7107AA26FA67B800F4F695 /* GitHubRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubRepository.swift; sourceTree = "<group>"; };
 		ABBA34B526F76F3F001BAEEF /* CounterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewController.swift; sourceTree = "<group>"; };
 		ABBA34B726F76FD1001BAEEF /* CounterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewModel.swift; sourceTree = "<group>"; };
 		ABBA34B926F7785C001BAEEF /* WKWeb.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WKWeb.storyboard; sourceTree = "<group>"; };
@@ -168,6 +182,7 @@
 		AB00DE1E26F66F25008CC3F1 /* RxSwiftMVVMPractice */ = {
 			isa = PBXGroup;
 			children = (
+				AB71079F26FA607600F4F695 /* ChainedRequests */,
 				ABBA34D926F7C88B001BAEEF /* News */,
 				ABBA34CC26F7B429001BAEEF /* Login */,
 				ABBA34CB26F7B3FC001BAEEF /* WKWeb */,
@@ -198,6 +213,20 @@
 				AB00DE4326F66F26008CC3F1 /* Info.plist */,
 			);
 			path = RxSwiftMVVMPracticeUITests;
+			sourceTree = "<group>";
+		};
+		AB71079F26FA607600F4F695 /* ChainedRequests */ = {
+			isa = PBXGroup;
+			children = (
+				AB7107A626FA679200F4F695 /* Repo.swift */,
+				AB71079D26FA607000F4F695 /* ChainedRequests.storyboard */,
+				AB7107A026FA60BE00F4F695 /* ChainedRequestsViewController.swift */,
+				AB7107AA26FA67B800F4F695 /* GitHubRepository.swift */,
+				AB7107A826FA67A900F4F695 /* NetworkService.swift */,
+				AB7107A226FA63C700F4F695 /* CustomTableViewCell.swift */,
+				AB7107A326FA63C700F4F695 /* CustomTableViewCell.xib */,
+			);
+			path = ChainedRequests;
 			sourceTree = "<group>";
 		};
 		ABBA34C526F7B39C001BAEEF /* Settings */ = {
@@ -380,12 +409,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABBA34BE26F77D4A001BAEEF /* Settings.storyboard in Resources */,
+				AB71079E26FA607000F4F695 /* ChainedRequests.storyboard in Resources */,
 				AB00DE2C26F66F26008CC3F1 /* LaunchScreen.storyboard in Resources */,
 				ABBA34CE26F7B560001BAEEF /* Login.storyboard in Resources */,
 				AB00DE2926F66F26008CC3F1 /* Assets.xcassets in Resources */,
 				ABBA34DF26F7C92A001BAEEF /* News.storyboard in Resources */,
 				AB00DE2726F66F25008CC3F1 /* Counter.storyboard in Resources */,
 				ABBA34E726F7C981001BAEEF /* NewsTableViewCell.xib in Resources */,
+				AB7107A526FA63C700F4F695 /* CustomTableViewCell.xib in Resources */,
 				ABBA34BA26F7785C001BAEEF /* WKWeb.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -516,13 +547,18 @@
 			files = (
 				ABBA34D026F7B56A001BAEEF /* LoginViewController.swift in Sources */,
 				ABBA34C226F77DD6001BAEEF /* SettingsSection.swift in Sources */,
+				AB7107A926FA67A900F4F695 /* NetworkService.swift in Sources */,
 				ABBA34D426F7B783001BAEEF /* LoginViewModel.swift in Sources */,
+				AB7107A426FA63C700F4F695 /* CustomTableViewCell.swift in Sources */,
 				ABBA34C026F77D56001BAEEF /* SettingsViewController.swift in Sources */,
 				ABBA34DB26F7C8C5001BAEEF /* News.swift in Sources */,
+				AB7107A126FA60BE00F4F695 /* ChainedRequestsViewController.swift in Sources */,
 				ABBA34DD26F7C8F1001BAEEF /* Constants.swift in Sources */,
 				ABBA34E926F7C9FF001BAEEF /* APIClient.swift in Sources */,
 				ABBA34D826F7B9B6001BAEEF /* Validation.swift in Sources */,
 				ABBA34BC26F7786B001BAEEF /* WKWebViewController.swift in Sources */,
+				AB7107AB26FA67B800F4F695 /* GitHubRepository.swift in Sources */,
+				AB7107A726FA679200F4F695 /* Repo.swift in Sources */,
 				ABBA34E626F7C981001BAEEF /* NewsTableViewCell.swift in Sources */,
 				ABBA34B626F76F3F001BAEEF /* CounterViewController.swift in Sources */,
 				ABBA34E326F7C936001BAEEF /* NewsViewModel.swift in Sources */,

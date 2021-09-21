@@ -6,24 +6,47 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
-class ChainedRequestsViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+final class ChainedRequestsViewController: UIViewController {
+    
+    @IBOutlet private weak var tableView: UITableView! {
+        didSet {
+            tableView.register(CustomTableViewCell.nib,
+                               forCellReuseIdentifier: CustomTableViewCell.identifier)
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private let githubRepository = GitHubRepository()
+    private let disposeBag = DisposeBag()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
+        let randomNumber = Int.random(in: 0...50)
+        
+        let reposObservable = githubRepository.getRepos().share()
+        
+        reposObservable.map { repos -> String in
+            let repo = repos[randomNumber]
+            return repo.owner.login + "/" + repo.name
+        }
+        .startWith("Loading...")
+        .bind(to: navigationItem.rx.title)
+        .disposed(by: disposeBag)
+        
+        reposObservable
+            .flatMap { repos -> Observable<[Branch]> in
+                let repo = repos[randomNumber]
+                return self.githubRepository.getBranches(ownerName: repo.owner.login,
+                                                         repoName: repo.name)
+            }.bind(to: tableView.rx.items(cellIdentifier: CustomTableViewCell.identifier,
+                                          cellType: CustomTableViewCell.self)) { index, branch, cell in
+                cell.configure(title: branch.name)
+            }.disposed(by: disposeBag)
     }
-    */
-
+    
 }

@@ -7,17 +7,15 @@
 
 import UIKit
 
-class CustomTableViewCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+final class CustomTableViewCell: UITableViewCell {
+    
+    @IBOutlet private weak var branchNameLabel: UILabel!
+    
+    static var identifier: String { String(describing: self) }
+    static var nib: UINib { UINib(nibName: String(describing: self), bundle: nil) }
+    
+    func configure(title: String) {
+        branchNameLabel.text = title
     }
     
 }

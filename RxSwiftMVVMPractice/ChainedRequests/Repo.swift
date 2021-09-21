@@ -6,3 +6,16 @@
 //
 
 import Foundation
+
+struct Repo: Decodable {
+    let name: String
+    let owner: Owner
+}
+
+struct Owner: Decodable {
+    let login: String
+}
+
+struct Branch: Decodable {
+    let name: String
+}
