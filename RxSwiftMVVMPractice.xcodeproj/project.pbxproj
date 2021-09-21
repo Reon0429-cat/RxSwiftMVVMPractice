@@ -219,10 +219,10 @@
 			isa = PBXGroup;
 			children = (
 				AB7107A626FA679200F4F695 /* Repo.swift */,
-				AB71079D26FA607000F4F695 /* ChainedRequests.storyboard */,
-				AB7107A026FA60BE00F4F695 /* ChainedRequestsViewController.swift */,
-				AB7107AA26FA67B800F4F695 /* GitHubRepository.swift */,
 				AB7107A826FA67A900F4F695 /* NetworkService.swift */,
+				AB7107AA26FA67B800F4F695 /* GitHubRepository.swift */,
+				AB7107A026FA60BE00F4F695 /* ChainedRequestsViewController.swift */,
+				AB71079D26FA607000F4F695 /* ChainedRequests.storyboard */,
 				AB7107A226FA63C700F4F695 /* CustomTableViewCell.swift */,
 				AB7107A326FA63C700F4F695 /* CustomTableViewCell.xib */,
 			);

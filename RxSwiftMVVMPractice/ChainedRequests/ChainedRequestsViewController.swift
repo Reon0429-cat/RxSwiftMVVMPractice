@@ -30,13 +30,11 @@ final class ChainedRequestsViewController: UIViewController {
         
         let reposObservable = githubRepository.getRepos().share()
         
-        reposObservable.map { repos -> String in
-            let repo = repos[randomNumber]
-            return repo.owner.login + "/" + repo.name
-        }
-        .startWith("Loading...")
-        .bind(to: navigationItem.rx.title)
-        .disposed(by: disposeBag)
+        reposObservable
+            .map { $0[randomNumber].owner.login + "/" + $0[randomNumber].name }
+            .startWith("Loading...")
+            .bind(to: navigationItem.rx.title)
+            .disposed(by: disposeBag)
         
         reposObservable
             .flatMap { repos -> Observable<[Branch]> in
@@ -47,6 +45,7 @@ final class ChainedRequestsViewController: UIViewController {
                                           cellType: CustomTableViewCell.self)) { index, branch, cell in
                 cell.configure(title: branch.name)
             }.disposed(by: disposeBag)
+        
     }
     
 }

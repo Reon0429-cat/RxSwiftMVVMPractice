@@ -7,9 +7,9 @@
 
 import Foundation
 import RxSwift
-import RxCocoa
 
 final class NetworkService {
+    
     func execute<T: Decodable>(url: URL) -> Observable<T> {
         return Observable.create { observer -> Disposable in
             let task = URLSession.shared.dataTask(with: url) { data, _, _ in
@@ -24,5 +24,6 @@ final class NetworkService {
             }
         }
     }
+    
 }
 
