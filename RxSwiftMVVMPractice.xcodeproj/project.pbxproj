@@ -23,6 +23,12 @@
 		AB7107A726FA679200F4F695 /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7107A626FA679200F4F695 /* Repo.swift */; };
 		AB7107A926FA67A900F4F695 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7107A826FA67A900F4F695 /* NetworkService.swift */; };
 		AB7107AB26FA67B800F4F695 /* GitHubRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7107AA26FA67B800F4F695 /* GitHubRepository.swift */; };
+		AB7107AE26FA801300F4F695 /* BeerListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7107AD26FA801300F4F695 /* BeerListViewModel.swift */; };
+		AB7107B026FA801C00F4F695 /* BeerListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7107AF26FA801C00F4F695 /* BeerListRepository.swift */; };
+		AB7107B226FA802100F4F695 /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7107B126FA802100F4F695 /* Beer.swift */; };
+		AB7107B426FA80F300F4F695 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7107B326FA80F300F4F695 /* RealmManager.swift */; };
+		AB7107B626FA86CF00F4F695 /* BeerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7107B526FA86CF00F4F695 /* BeerAPI.swift */; };
+		AB7107B826FA8B9B00F4F695 /* BeerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7107B726FA8B9B00F4F695 /* BeerListViewController.swift */; };
 		ABBA34B626F76F3F001BAEEF /* CounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBA34B526F76F3F001BAEEF /* CounterViewController.swift */; };
 		ABBA34B826F76FD1001BAEEF /* CounterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBA34B726F76FD1001BAEEF /* CounterViewModel.swift */; };
 		ABBA34BA26F7785C001BAEEF /* WKWeb.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABBA34B926F7785C001BAEEF /* WKWeb.storyboard */; };
@@ -93,6 +99,12 @@
 		AB7107A626FA679200F4F695 /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
 		AB7107A826FA67A900F4F695 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		AB7107AA26FA67B800F4F695 /* GitHubRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubRepository.swift; sourceTree = "<group>"; };
+		AB7107AD26FA801300F4F695 /* BeerListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerListViewModel.swift; sourceTree = "<group>"; };
+		AB7107AF26FA801C00F4F695 /* BeerListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerListRepository.swift; sourceTree = "<group>"; };
+		AB7107B126FA802100F4F695 /* Beer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
+		AB7107B326FA80F300F4F695 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		AB7107B526FA86CF00F4F695 /* BeerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerAPI.swift; sourceTree = "<group>"; };
+		AB7107B726FA8B9B00F4F695 /* BeerListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerListViewController.swift; sourceTree = "<group>"; };
 		ABBA34B526F76F3F001BAEEF /* CounterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewController.swift; sourceTree = "<group>"; };
 		ABBA34B726F76FD1001BAEEF /* CounterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewModel.swift; sourceTree = "<group>"; };
 		ABBA34B926F7785C001BAEEF /* WKWeb.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WKWeb.storyboard; sourceTree = "<group>"; };
@@ -182,6 +194,7 @@
 		AB00DE1E26F66F25008CC3F1 /* RxSwiftMVVMPractice */ = {
 			isa = PBXGroup;
 			children = (
+				AB7107AC26FA7FFF00F4F695 /* Beer */,
 				AB71079F26FA607600F4F695 /* ChainedRequests */,
 				ABBA34D926F7C88B001BAEEF /* News */,
 				ABBA34CC26F7B429001BAEEF /* Login */,
@@ -227,6 +240,19 @@
 				AB7107A326FA63C700F4F695 /* CustomTableViewCell.xib */,
 			);
 			path = ChainedRequests;
+			sourceTree = "<group>";
+		};
+		AB7107AC26FA7FFF00F4F695 /* Beer */ = {
+			isa = PBXGroup;
+			children = (
+				AB7107B126FA802100F4F695 /* Beer.swift */,
+				AB7107B526FA86CF00F4F695 /* BeerAPI.swift */,
+				AB7107B326FA80F300F4F695 /* RealmManager.swift */,
+				AB7107AF26FA801C00F4F695 /* BeerListRepository.swift */,
+				AB7107AD26FA801300F4F695 /* BeerListViewModel.swift */,
+				AB7107B726FA8B9B00F4F695 /* BeerListViewController.swift */,
+			);
+			path = Beer;
 			sourceTree = "<group>";
 		};
 		ABBA34C526F7B39C001BAEEF /* Settings */ = {
@@ -550,11 +576,14 @@
 				AB7107A926FA67A900F4F695 /* NetworkService.swift in Sources */,
 				ABBA34D426F7B783001BAEEF /* LoginViewModel.swift in Sources */,
 				AB7107A426FA63C700F4F695 /* CustomTableViewCell.swift in Sources */,
+				AB7107B426FA80F300F4F695 /* RealmManager.swift in Sources */,
 				ABBA34C026F77D56001BAEEF /* SettingsViewController.swift in Sources */,
 				ABBA34DB26F7C8C5001BAEEF /* News.swift in Sources */,
 				AB7107A126FA60BE00F4F695 /* ChainedRequestsViewController.swift in Sources */,
 				ABBA34DD26F7C8F1001BAEEF /* Constants.swift in Sources */,
+				AB7107AE26FA801300F4F695 /* BeerListViewModel.swift in Sources */,
 				ABBA34E926F7C9FF001BAEEF /* APIClient.swift in Sources */,
+				AB7107B826FA8B9B00F4F695 /* BeerListViewController.swift in Sources */,
 				ABBA34D826F7B9B6001BAEEF /* Validation.swift in Sources */,
 				ABBA34BC26F7786B001BAEEF /* WKWebViewController.swift in Sources */,
 				AB7107AB26FA67B800F4F695 /* GitHubRepository.swift in Sources */,
@@ -563,12 +592,15 @@
 				ABBA34B626F76F3F001BAEEF /* CounterViewController.swift in Sources */,
 				ABBA34E326F7C936001BAEEF /* NewsViewModel.swift in Sources */,
 				AB00DE2026F66F25008CC3F1 /* AppDelegate.swift in Sources */,
+				AB7107B226FA802100F4F695 /* Beer.swift in Sources */,
 				ABBA34B826F76FD1001BAEEF /* CounterViewModel.swift in Sources */,
+				AB7107B626FA86CF00F4F695 /* BeerAPI.swift in Sources */,
 				AB00DE2226F66F25008CC3F1 /* SceneDelegate.swift in Sources */,
 				ABBA34D226F7B5AF001BAEEF /* User.swift in Sources */,
 				ABBA34C426F78110001BAEEF /* SettingsViewModel.swift in Sources */,
 				ABBA34D626F7B7F8001BAEEF /* HomeViewController.swift in Sources */,
 				ABBA34E126F7C92F001BAEEF /* NewsViewController.swift in Sources */,
+				AB7107B026FA801C00F4F695 /* BeerListRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
