@@ -16,6 +16,8 @@
 		AB00DE2C26F66F26008CC3F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB00DE2A26F66F26008CC3F1 /* LaunchScreen.storyboard */; };
 		AB00DE3726F66F26008CC3F1 /* RxSwiftMVVMPracticeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB00DE3626F66F26008CC3F1 /* RxSwiftMVVMPracticeTests.swift */; };
 		AB00DE4226F66F26008CC3F1 /* RxSwiftMVVMPracticeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB00DE4126F66F26008CC3F1 /* RxSwiftMVVMPracticeUITests.swift */; };
+		AB5B1EE426FAB6A6005A8095 /* SampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5B1EE326FAB6A6005A8095 /* SampleViewController.swift */; };
+		AB5B1EE626FAB6BA005A8095 /* Sample.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB5B1EE526FAB6BA005A8095 /* Sample.storyboard */; };
 		AB71079E26FA607000F4F695 /* ChainedRequests.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB71079D26FA607000F4F695 /* ChainedRequests.storyboard */; };
 		AB7107A126FA60BE00F4F695 /* ChainedRequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7107A026FA60BE00F4F695 /* ChainedRequestsViewController.swift */; };
 		AB7107A426FA63C700F4F695 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7107A226FA63C700F4F695 /* CustomTableViewCell.swift */; };
@@ -92,6 +94,8 @@
 		AB00DE3D26F66F26008CC3F1 /* RxSwiftMVVMPracticeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxSwiftMVVMPracticeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB00DE4126F66F26008CC3F1 /* RxSwiftMVVMPracticeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftMVVMPracticeUITests.swift; sourceTree = "<group>"; };
 		AB00DE4326F66F26008CC3F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB5B1EE326FAB6A6005A8095 /* SampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
+		AB5B1EE526FAB6BA005A8095 /* Sample.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sample.storyboard; sourceTree = "<group>"; };
 		AB71079D26FA607000F4F695 /* ChainedRequests.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChainedRequests.storyboard; sourceTree = "<group>"; };
 		AB7107A026FA60BE00F4F695 /* ChainedRequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainedRequestsViewController.swift; sourceTree = "<group>"; };
 		AB7107A226FA63C700F4F695 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
@@ -201,6 +205,7 @@
 				ABBA34CB26F7B3FC001BAEEF /* WKWeb */,
 				ABBA34C626F7B3B9001BAEEF /* Counter */,
 				ABBA34C526F7B39C001BAEEF /* Settings */,
+				AB5B1EE226FAB680005A8095 /* Sample */,
 				AB00DE1F26F66F25008CC3F1 /* AppDelegate.swift */,
 				AB00DE2126F66F25008CC3F1 /* SceneDelegate.swift */,
 				AB00DE2826F66F26008CC3F1 /* Assets.xcassets */,
@@ -226,6 +231,15 @@
 				AB00DE4326F66F26008CC3F1 /* Info.plist */,
 			);
 			path = RxSwiftMVVMPracticeUITests;
+			sourceTree = "<group>";
+		};
+		AB5B1EE226FAB680005A8095 /* Sample */ = {
+			isa = PBXGroup;
+			children = (
+				AB5B1EE326FAB6A6005A8095 /* SampleViewController.swift */,
+				AB5B1EE526FAB6BA005A8095 /* Sample.storyboard */,
+			);
+			path = Sample;
 			sourceTree = "<group>";
 		};
 		AB71079F26FA607600F4F695 /* ChainedRequests */ = {
@@ -441,6 +455,7 @@
 				AB00DE2926F66F26008CC3F1 /* Assets.xcassets in Resources */,
 				ABBA34DF26F7C92A001BAEEF /* News.storyboard in Resources */,
 				AB00DE2726F66F25008CC3F1 /* Counter.storyboard in Resources */,
+				AB5B1EE626FAB6BA005A8095 /* Sample.storyboard in Resources */,
 				ABBA34E726F7C981001BAEEF /* NewsTableViewCell.xib in Resources */,
 				AB7107A526FA63C700F4F695 /* CustomTableViewCell.xib in Resources */,
 				ABBA34BA26F7785C001BAEEF /* WKWeb.storyboard in Resources */,
@@ -585,6 +600,7 @@
 				ABBA34E926F7C9FF001BAEEF /* APIClient.swift in Sources */,
 				AB7107B826FA8B9B00F4F695 /* BeerListViewController.swift in Sources */,
 				ABBA34D826F7B9B6001BAEEF /* Validation.swift in Sources */,
+				AB5B1EE426FAB6A6005A8095 /* SampleViewController.swift in Sources */,
 				ABBA34BC26F7786B001BAEEF /* WKWebViewController.swift in Sources */,
 				AB7107AB26FA67B800F4F695 /* GitHubRepository.swift in Sources */,
 				AB7107A726FA679200F4F695 /* Repo.swift in Sources */,

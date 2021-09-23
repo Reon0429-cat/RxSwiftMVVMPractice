@@ -23,7 +23,7 @@ final class BeerListViewController: UIViewController {
     }
     
     private func setupBindings() {
-
+        
     }
     
 }
