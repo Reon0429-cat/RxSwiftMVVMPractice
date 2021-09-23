@@ -20,25 +20,47 @@ final class SampleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        just()
+        empty()
         
     }
     
+    private func empty() {
+        // onCompletedのみ
+        let observable = Observable<Int>.empty()
+        observable
+            .subscribe({ print($0) })
+            .disposed(by: disposeBag)
+        // completed
+    }
+    
     private func just() {
+        // 1回のonNextごにonCompletedするObservable
+        let observable = Observable.just(1) // Observable<Int>.just(1)と同じ
+        observable
+            .subscribe({ print($0) })
+            .disposed(by: disposeBag)
+        // next(1)
+        // completed
         
+        // 以下のようにcreateを使って作ることもできる
+        // let observable = Observable<Int>.create { observer in
+        //     observer.onNext(1)
+        //     observer.onCompleted()
+        //     return Disposables.create()
+        // }
     }
     
     private func createObservable() {
         // ライブラリ自体にObservableが用意されている場合はそちらを使うが、
         // 用意されていない場合は自作する
         // ↓ subscribeされると100, 200を出力後、完了するObservableを自作
-        let sample1 = Observable<Int>.create { observer in
+        let observable = Observable<Int>.create { observer in
             observer.onNext(100)
             observer.onNext(200)
             observer.onCompleted()
             return Disposables.create()
         }
-        sample1
+        observable
             .subscribe({ print($0) })
             .disposed(by: disposeBag)
         // next(100)
