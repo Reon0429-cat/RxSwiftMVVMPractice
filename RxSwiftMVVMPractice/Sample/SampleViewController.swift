@@ -20,8 +20,34 @@ final class SampleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        catchError()
+        materialize()
         
+    }
+    
+    private func materialize() {
+        let observable = Observable<String>.create { observer in
+            observer.onNext("A")
+            observer.onError(SampleError.error)
+            return Disposables.create()
+        }
+        // Observable<String> -> Observable<Event<String>>
+        _ = observable.materialize()
+            .subscribe(onNext: { event in
+                switch event {
+                    case .next(let string):
+                        print(string)
+                    case .error(let error):
+                        print(error)
+                    case .completed:
+                        print("完了")
+                }
+            }, onError: { error in
+                print(error)
+            })
+        /*
+         A
+         error
+         */
     }
     
     private func catchError() {
