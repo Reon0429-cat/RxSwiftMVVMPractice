@@ -33,13 +33,7 @@ final class SampleViewController: UIViewController {
             return Disposables.create()
         }
         _ = sequence
-            .catch({ error in
-                if error is SampleError {
-                    return Observable.just("Z")
-                } else {
-                    return .empty()
-                }
-            })
+            .catchAndReturn("Z")
             .subscribe(onNext: { string in
                 print("onNext: ", string)
             }, onError: { error in
@@ -49,6 +43,12 @@ final class SampleViewController: UIViewController {
             }, onDisposed: {
                 print("onDisposed")
             })
+        /*
+         onNext:  A
+         onNext:  Z
+         onCompleted
+         onDisposed
+         */
     }
     
     private func retry() {
