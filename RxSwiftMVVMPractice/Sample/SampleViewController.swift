@@ -10,18 +10,139 @@ import RxSwift
 import RxCocoa
 
 enum SampleError: Error {
-    case invalid
+    case error
 }
 
 final class SampleViewController: UIViewController {
     
     private let disposeBag = DisposeBag()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        empty()
+        catchError()
         
+    }
+    
+    private func catchError() {
+        let sequence = Observable<String>.create { observer in
+            observer.onNext("A")
+            observer.onError(SampleError.error)
+            observer.onNext("B")
+            observer.onCompleted()
+            return Disposables.create()
+        }
+        _ = sequence
+            .catch({ error in
+                if error is SampleError {
+                    return Observable.just("Z")
+                } else {
+                    return .empty()
+                }
+            })
+            .subscribe(onNext: { string in
+                print("onNext: ", string)
+            }, onError: { error in
+                print("onError", error)
+            }, onCompleted: {
+                print("onCompleted")
+            }, onDisposed: {
+                print("onDisposed")
+            })
+    }
+    
+    private func retry() {
+        let sequence = Observable<String>.create { observer in
+            observer.onNext("A")
+            observer.onError(SampleError.error)
+            print("Error 発生")
+            observer.onNext("B")
+            observer.onCompleted()
+            return Disposables.create()
+        }
+        
+        _ = sequence
+            .retry(2)
+            .subscribe(onNext: { string in
+                print("onNext: ", string)
+            }, onError: { error in
+                print("onError", error)
+            }, onCompleted: {
+                print("onCompleted")
+            }, onDisposed: {
+                print("onDisposed")
+            })
+        /*
+         onNext:  A
+         Error 発生
+         onNext:  A
+         Error 発生
+         onError error
+         onDisposed
+         */
+    }
+    
+    private func 正常終了() {
+        let sequence = Observable.of(1, 2)
+            .flatMap { int -> Observable<String> in
+                print("\(int)")
+                let observable = Observable<String>.create { observer in
+                    observer.onNext("A")
+                    observer.onCompleted()
+                    observer.onNext("B")
+                    return Disposables.create()
+                }
+                return observable
+            }
+        
+        _ = sequence
+            .subscribe(onNext: { string in
+                print("onNext: ", string)
+            }, onError: { error in
+                print("onError", error)
+            }, onCompleted: {
+                print("onCompleted")
+            }, onDisposed: {
+                print("onDisposed")
+            })
+        /* 1
+         onNext:  A
+         2
+         onNext:  A
+         onCompleted
+         onDisposed
+         */
+    }
+    
+    private func 異常終了() {
+        let sequence = Observable.of(1, 2)
+            .flatMap { int -> Observable<String> in
+                print("\(int)")
+                let observable = Observable<String>.create { observer in
+                    observer.onNext("A")
+                    observer.onError(SampleError.error)
+                    observer.onNext("B")
+                    return Disposables.create()
+                }
+                return observable
+            }
+        
+        _ = sequence
+            .subscribe(onNext: { string in
+                print("onNext: ", string)
+            }, onError: { error in
+                print("onError", error)
+            }, onCompleted: {
+                print("onCompleted")
+            }, onDisposed: {
+                print("onDisposed")
+            })
+        /*
+         1
+         onNext:  A
+         onError error
+         onDisposed
+         */
     }
     
     private func empty() {
@@ -135,7 +256,7 @@ final class SampleViewController: UIViewController {
             }
         }.flatMap { value in
             return Single<Int>.create { singleObserver in
-                singleObserver(.failure(SampleError.invalid))
+                singleObserver(.failure(SampleError.error))
                 return Disposables.create()
             }
         }.flatMap { value in
@@ -160,3 +281,4 @@ final class SampleViewController: UIViewController {
     }
     
 }
+
