@@ -20,8 +20,40 @@ final class SampleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        materialize()
+        materialize分岐()
         
+    }
+    
+    private func materialize分岐() {
+        let observable = Observable<String>.create { observer in
+            observer.onNext("A")
+            observer.onError(SampleError.error)
+            return Disposables.create()
+        }
+        let result = observable.materialize()
+        // 正常系のみ取り出すために正常系のみ取り出したストリームelementsの作成
+        let elements = result
+            .compactMap { $0.element }
+        _ = elements.subscribe { value in
+            print(value)
+        } onError: { error in
+            print(error)
+        }.disposed(by: disposeBag)
+        /*
+         A
+         */
+        
+        // 異常系のみ取り出すために異常系のみ取り出したストリームerrorsの作成
+        let errors = result
+            .compactMap { $0.error }
+        _ = errors.subscribe { value in
+            print(value)
+        } onError: { error in
+            print(error)
+        }.disposed(by: disposeBag)
+        /*
+         error
+         */
     }
     
     private func materialize() {
@@ -307,4 +339,3 @@ final class SampleViewController: UIViewController {
     }
     
 }
-
