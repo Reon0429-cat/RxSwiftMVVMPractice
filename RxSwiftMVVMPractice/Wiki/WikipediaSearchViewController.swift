@@ -11,7 +11,7 @@ import RxCocoa
 import SafariServices
 
 final class WikipediaSearchViewController: UIViewController {
-
+    
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var tableView: UITableView!
     private let disposeBag = DisposeBag()
@@ -30,6 +30,15 @@ final class WikipediaSearchViewController: UIViewController {
                 cell.textLabel?.text = result.title
                 cell.detailTextLabel?.text = result.url.absoluteString
             }
+            .disposed(by: disposeBag)
+        
+        viewModel.error
+            .compactMap { $0 as? URLError }
+            .subscribe(onNext: { error in
+                if error.code == .notConnectedToInternet {
+                    // alert
+                }
+            })
             .disposed(by: disposeBag)
         
     }
