@@ -16,8 +16,13 @@
 		AB00DE2C26F66F26008CC3F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB00DE2A26F66F26008CC3F1 /* LaunchScreen.storyboard */; };
 		AB00DE3726F66F26008CC3F1 /* RxSwiftMVVMPracticeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB00DE3626F66F26008CC3F1 /* RxSwiftMVVMPracticeTests.swift */; };
 		AB00DE4226F66F26008CC3F1 /* RxSwiftMVVMPracticeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB00DE4126F66F26008CC3F1 /* RxSwiftMVVMPracticeUITests.swift */; };
+		AB13E21D270530B900063A0B /* WikipediaPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB13E21C270530B900063A0B /* WikipediaPage.swift */; };
+		AB13E21F270530DC00063A0B /* WikipediaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB13E21E270530DC00063A0B /* WikipediaAPI.swift */; };
 		AB5B1EE426FAB6A6005A8095 /* SampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5B1EE326FAB6A6005A8095 /* SampleViewController.swift */; };
 		AB5B1EE626FAB6BA005A8095 /* Sample.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB5B1EE526FAB6BA005A8095 /* Sample.storyboard */; };
+		AB6E89EB27052DA0005FEA63 /* WikipediaSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6E89EA27052DA0005FEA63 /* WikipediaSearchViewModel.swift */; };
+		AB6E89ED27052DAD005FEA63 /* WikipediaSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6E89EC27052DAD005FEA63 /* WikipediaSearchViewController.swift */; };
+		AB6E89EF27052DB9005FEA63 /* WikipediaSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB6E89EE27052DB9005FEA63 /* WikipediaSearch.storyboard */; };
 		AB71079E26FA607000F4F695 /* ChainedRequests.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB71079D26FA607000F4F695 /* ChainedRequests.storyboard */; };
 		AB7107A126FA60BE00F4F695 /* ChainedRequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7107A026FA60BE00F4F695 /* ChainedRequestsViewController.swift */; };
 		AB7107A426FA63C700F4F695 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7107A226FA63C700F4F695 /* CustomTableViewCell.swift */; };
@@ -94,8 +99,13 @@
 		AB00DE3D26F66F26008CC3F1 /* RxSwiftMVVMPracticeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxSwiftMVVMPracticeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB00DE4126F66F26008CC3F1 /* RxSwiftMVVMPracticeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftMVVMPracticeUITests.swift; sourceTree = "<group>"; };
 		AB00DE4326F66F26008CC3F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB13E21C270530B900063A0B /* WikipediaPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaPage.swift; sourceTree = "<group>"; };
+		AB13E21E270530DC00063A0B /* WikipediaAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaAPI.swift; sourceTree = "<group>"; };
 		AB5B1EE326FAB6A6005A8095 /* SampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
 		AB5B1EE526FAB6BA005A8095 /* Sample.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sample.storyboard; sourceTree = "<group>"; };
+		AB6E89EA27052DA0005FEA63 /* WikipediaSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaSearchViewModel.swift; sourceTree = "<group>"; };
+		AB6E89EC27052DAD005FEA63 /* WikipediaSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaSearchViewController.swift; sourceTree = "<group>"; };
+		AB6E89EE27052DB9005FEA63 /* WikipediaSearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WikipediaSearch.storyboard; sourceTree = "<group>"; };
 		AB71079D26FA607000F4F695 /* ChainedRequests.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChainedRequests.storyboard; sourceTree = "<group>"; };
 		AB7107A026FA60BE00F4F695 /* ChainedRequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainedRequestsViewController.swift; sourceTree = "<group>"; };
 		AB7107A226FA63C700F4F695 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
@@ -198,6 +208,7 @@
 		AB00DE1E26F66F25008CC3F1 /* RxSwiftMVVMPractice */ = {
 			isa = PBXGroup;
 			children = (
+				AB6E89E927052D88005FEA63 /* Wiki */,
 				AB7107AC26FA7FFF00F4F695 /* Beer */,
 				AB71079F26FA607600F4F695 /* ChainedRequests */,
 				ABBA34D926F7C88B001BAEEF /* News */,
@@ -240,6 +251,18 @@
 				AB5B1EE526FAB6BA005A8095 /* Sample.storyboard */,
 			);
 			path = Sample;
+			sourceTree = "<group>";
+		};
+		AB6E89E927052D88005FEA63 /* Wiki */ = {
+			isa = PBXGroup;
+			children = (
+				AB6E89EE27052DB9005FEA63 /* WikipediaSearch.storyboard */,
+				AB6E89EC27052DAD005FEA63 /* WikipediaSearchViewController.swift */,
+				AB6E89EA27052DA0005FEA63 /* WikipediaSearchViewModel.swift */,
+				AB13E21C270530B900063A0B /* WikipediaPage.swift */,
+				AB13E21E270530DC00063A0B /* WikipediaAPI.swift */,
+			);
+			path = Wiki;
 			sourceTree = "<group>";
 		};
 		AB71079F26FA607600F4F695 /* ChainedRequests */ = {
@@ -450,6 +473,7 @@
 			files = (
 				ABBA34BE26F77D4A001BAEEF /* Settings.storyboard in Resources */,
 				AB71079E26FA607000F4F695 /* ChainedRequests.storyboard in Resources */,
+				AB6E89EF27052DB9005FEA63 /* WikipediaSearch.storyboard in Resources */,
 				AB00DE2C26F66F26008CC3F1 /* LaunchScreen.storyboard in Resources */,
 				ABBA34CE26F7B560001BAEEF /* Login.storyboard in Resources */,
 				AB00DE2926F66F26008CC3F1 /* Assets.xcassets in Resources */,
@@ -598,13 +622,17 @@
 				ABBA34DD26F7C8F1001BAEEF /* Constants.swift in Sources */,
 				AB7107AE26FA801300F4F695 /* BeerListViewModel.swift in Sources */,
 				ABBA34E926F7C9FF001BAEEF /* APIClient.swift in Sources */,
+				AB13E21F270530DC00063A0B /* WikipediaAPI.swift in Sources */,
 				AB7107B826FA8B9B00F4F695 /* BeerListViewController.swift in Sources */,
 				ABBA34D826F7B9B6001BAEEF /* Validation.swift in Sources */,
 				AB5B1EE426FAB6A6005A8095 /* SampleViewController.swift in Sources */,
 				ABBA34BC26F7786B001BAEEF /* WKWebViewController.swift in Sources */,
 				AB7107AB26FA67B800F4F695 /* GitHubRepository.swift in Sources */,
 				AB7107A726FA679200F4F695 /* Repo.swift in Sources */,
+				AB6E89EB27052DA0005FEA63 /* WikipediaSearchViewModel.swift in Sources */,
 				ABBA34E626F7C981001BAEEF /* NewsTableViewCell.swift in Sources */,
+				AB13E21D270530B900063A0B /* WikipediaPage.swift in Sources */,
+				AB6E89ED27052DAD005FEA63 /* WikipediaSearchViewController.swift in Sources */,
 				ABBA34B626F76F3F001BAEEF /* CounterViewController.swift in Sources */,
 				ABBA34E326F7C936001BAEEF /* NewsViewModel.swift in Sources */,
 				AB00DE2026F66F25008CC3F1 /* AppDelegate.swift in Sources */,
